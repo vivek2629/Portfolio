@@ -1,0 +1,46 @@
+.animate-role-rotate {
+  /* Set initial state */
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(4px);
+
+  /* Run the animation infinitely */
+  animation-name: rotateWord;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotateWord {
+  /* 0% to 5%: Fading in and unblurring */
+  0% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(4px);
+  }
+  5% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+
+  /* 5% to 15%: Staying visible on screen */
+  15% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0px);
+  }
+
+  /* 15% to 20%: Fading out and blurring slightly upwards */
+  20% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-4px);
+  }
+
+  /* 20% to 100%: Hidden in the background waiting for its next turn */
+  100% {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-4px);
+  }
+}
